@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ney Motos | Peças, Acessórios e Oficina em Buritirama - BA</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Variáveis Globais de Cores e Estilos */
+        :root {
+            --primary: #0F172A;        
+            --primary-light: #1E293B;  
+            --accent: #FF5500;         
+            --accent-hover: #E04B00;
+            --whatsapp: #25D366;       
+            --whatsapp-hover: #1EBE57;
+            --bg-light: #F8FAFC;       
+            --surface: #FFFFFF;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 30px -10px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Barra Superior */
+        .top-bar {
+            background-color: var(--primary);
+            color: #94A3B8;
+            font-size: 0.85rem;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .top-bar-info { display: flex; gap: 20px; }
+        .top-bar-info span { display: flex; align-items: center; gap: 6px; }
+
+        /* Menu de Navegação */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            perspective: 1000px; /* Para a animação 3D da logo */
+        }
+
+        .brand-logo img {
+            width: 80px; /* Tamanho ajustado da logo */
+            height: auto;
+            border-radius: 8px;
+            animation: float3d 5s ease-in-out infinite;
+            transform-style: preserve-3d;
+            background-color: white; /* Caso a logo tenha partes escuras, ajuda a destacar */
+            padding: 5px;
+            border: 2px solid var(--border);
+        }
+
+        /* Animação 3D CSS na logo */
+        @keyframes float3d {
+            0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-10deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+            50% { transform: translateY(-6px) rotateX(-5deg) rotateY(10deg); filter: drop-shadow(0 10px 15px rgba(255, 85, 0, 0.25)); }
+        }
+
+        .brand-title { font-size: 1.5rem; font-weight: 800; color: var(--primary); line-height: 1.1; letter-spacing: -0.5px; }
+        .brand-title span { color: var(--accent); }
+        .brand-subtitle { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; }
+
+        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .btn-zap-header { background-color: var(--whatsapp); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); }
+        .btn-zap-header:hover { background-color: var(--whatsapp-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35); }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content { max-width: 850px; margin: 0 auto; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 85, 0, 0.15); border: 1px solid rgba(255, 85, 0, 0.4); color: #FF884D; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 25px; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.15rem; color: #94A3B8; margin-bottom: 35px; max-width: 680px; margin-left: auto; margin-right: auto; }
+        
+        .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-hero-primary { background-color: var(--accent); color: white; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(255, 85, 0, 0.3); }
+        .btn-hero-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255, 85, 0, 0.4); }
+        .btn-hero-secondary { background-color: rgba(255,255,255,0.1); color: white; padding: 16px 36px; border-radius: 50px; font-weight: 700; font-size: 1.05rem; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
+        .btn-hero-secondary:hover { background-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+
+        /* Seção de Marcas das Motos */
+        .brands-section {
+            background-color: var(--surface);
+            padding: 60px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .brands-section-title {
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 45px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .brands-section-title::before,
+        .brands-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border));
+        }
+        .brands-section-title::after {
+            background: linear-gradient(to left, transparent, var(--border));
+        }
+        .brands-marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .brands-container {
+            display: flex;
+            width: max-content;
+            animation: scroll-marquee 20s linear infinite;
+        }
+        .brands-container:hover {
+            animation-play-state: paused;
+        }
+        @keyframes scroll-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Divisor vertical desativado no marquee */
+        .brand-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: grayscale(100%);
+            opacity: 0.45;
+            cursor: pointer;
+            padding: 35px 60px; /* Mais espaço horizontal para o carrossel */
+            position: relative;
+        }
+        .brand-item:hover {
+            transform: translateY(-6px) scale(1.05);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        .brand-item:hover .brand-name {
+            color: var(--accent);
+        }
+        .brand-item img {
+            max-width: 130px;
+            max-height: 58px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .brand-name {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        /* Layout Padrão */
+        .section-padding { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-subtitle { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+        .section-title { font-size: 2.2rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+
+        /* Grid de Produtos / Peças - Estilo Loja */
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            border-color: #CBD5E1;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        /* Imagem com fundo cinza claro como loja real */
+        .product-image {
+            position: relative;
+            height: 210px;
+            background: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 160px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image img { transform: scale(1.07); }
+        
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-content {
+            padding: 18px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-code {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 14px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .btn-card-zap {
+            background-color: var(--whatsapp);
+            color: white;
+            border: none;
+            padding: 11px 16px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .btn-card-zap:hover { background-color: var(--whatsapp-hover); transform: scale(1.02); }
+
+        /* Banner Qualidade Oficina */
+        .quality-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--primary);
+            overflow: hidden;
+        }
+
+        .quality-text {
+            padding: 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quality-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .quality-label::before {
+            content: '';
+            width: 4px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .quality-text h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .quality-text p {
+            color: #94A3B8;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .quality-text p strong { color: white; }
+
+        .quality-text .btn-hero-primary {
+            align-self: flex-start;
+            margin-top: 15px;
+        }
+
+        .quality-image {
+            position: relative;
+            min-height: 420px;
+            overflow: hidden;
+        }
+
+        .quality-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Banner tools full-width */
+        .tools-banner {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tools-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .tools-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.2) 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .tools-banner-text h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .tools-banner-text p {
+            color: #CBD5E1;
+            font-size: 1.05rem;
+        }
+
+        /* Diferenciais - Compacto e Moderno */
+        .features-strip {
+            background: linear-gradient(135deg, #0F172A, #1E293B);
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+        .features-strip .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .features-strip .section-header { margin-bottom: 35px; }
+        .features-strip .section-subtitle { color: var(--accent); }
+        .features-strip .section-title { color: white; font-size: 1.8rem; }
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .feat-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            transition: all 0.35s ease;
+            backdrop-filter: blur(10px);
+        }
+        .feat-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(239, 68, 68, 0.3);
+            transform: translateY(-4px);
+        }
+        .feat-icon {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            background: linear-gradient(135deg, var(--accent), #e13d00);
+            color: white;
+            font-size: 1.3rem;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+        }
+        .feat-text h4 {
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .feat-text p {
+            color: #94A3B8;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* Contato - Faixa compacta */
+        .contact-strip {
+            background: var(--accent);
+            padding: 0;
+        }
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .contact-block {
+            padding: 32px 30px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+            transition: background 0.3s ease;
+        }
+        .contact-block:last-child { border-right: none; }
+        .contact-block:hover { background: rgba(0,0,0,0.08); }
+        .contact-block i {
+            font-size: 1.6rem;
+            color: white;
+            min-width: 30px;
+            text-align: center;
+        }
+        .contact-block-text strong {
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .contact-block-text span {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.92rem;
+        }
+        .contact-block-text a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Footer moderno */
+        footer {
+            background: #0B1120;
+            color: #64748B;
+            padding: 35px 20px;
+            border-top: 1px solid #1E293B;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-brand img {
+            height: 32px;
+            border-radius: 6px;
+        }
+        .footer-brand span {
+            font-weight: 700;
+            color: #94A3B8;
+            font-size: 0.95rem;
+        }
+        .footer-copy {
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #1E293B;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-socials a:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .float-zap { position: fixed; bottom: 25px; right: 25px; background-color: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none; transition: all 0.3s ease; }
+        .float-zap:hover { transform: scale(1.1); background-color: var(--whatsapp-hover); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .section-title { font-size: 1.9rem; }
+            .brands-container { justify-content: center; gap: 40px; }
+            .features-row { grid-template-columns: 1fr; }
+            .contact-inner { grid-template-columns: 1fr; }
+            .contact-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+            .contact-block:last-child { border-bottom: none; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .quality-banner { grid-template-columns: 1fr; }
+            .quality-text { padding: 40px 25px; }
+            .quality-image { min-height: 260px; }
+            .tools-banner { height: 200px; }
+            .tools-banner-text h3 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-location-dot"></i> Rua Venâncio Pereira, 644 - Buritirama - BA</span>
+            <span><i class="fa-solid fa-clock"></i> Seg a Sex: 07h - 12h / 14h - 17h | Sáb: 07h - 12h</span>
+        </div>
+        <div>
+            <span><i class="fa-brands fa-whatsapp"></i> (77) 99838-7125</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <!-- Imagem da Logo anexada, lida a partir da pasta IMA -->
+                <img src="IMA/WhatsApp_Image_2026-07-23_at_12.54.54-removebg-preview.png" alt="Logo Ney Motos">
+                <div class="brand-text">
+                    <span class="brand-title">NEY <span>MOTOS</span></span>
+                    <span class="brand-subtitle">Peças & Oficina</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Peças e Produtos</a></li>
+                <li><a href="#oficina">Oficina</a></li>
+                <li><a href="#contato">Localização</a></li>
+            </ul>
+
+            <a href="https://wa.me/5577998387125?text=Olá!%20Vim%20pelo%20site%20da%20Ney%20Motos%20e%20gostaria%20de%20fazer%20um%20orçamento." class="btn-zap-header" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-wrench"></i> Peças Originais & Assistência Técnica
+            </div>
+            <h1>A sua moto em <span>boas mãos</span> com quem entende do assunto</h1>
+            <p>Linha completa de peças de reposição, kit transmissão, pneus, faróis, painéis digitais, carenagens e serviço de oficina especializada em Buritirama e região.</p>
+            
+            <div class="hero-buttons">
+                <a href="https://wa.me/5577998387125?text=Olá!%20Gostaria%20de%20consultar%20uma%20peça%20na%20Ney%20Motos." class="btn-hero-primary" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir Orçamento no WhatsApp
+                </a>
+                <a href="#produtos" class="btn-hero-secondary">
+                    <i class="fa-solid fa-list-check"></i> Ver Catálogo Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos das Marcas -->
+    <div class="brands-section">
+        <p class="brands-section-title">Trabalhamos com as melhores marcas</p>
+        <div class="brands-marquee-wrapper">
+            <div class="brands-container">
+                <!-- Original 4 -->
+                <div class="brand-item" title="Peças Suzuki">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134620-removebg-preview.png" alt="Logo Suzuki">
+                    <span class="brand-name">Suzuki</span>
+                </div>
+                <div class="brand-item" title="Peças Honda">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134719-removebg-preview.png" alt="Logo Honda">
+                    <span class="brand-name">Honda</span>
+                </div>
+                <div class="brand-item" title="Peças Yamaha">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134757-removebg-preview.png" alt="Logo Yamaha">
+                    <span class="brand-name">Yamaha</span>
+                </div>
+                <div class="brand-item" title="Peças Kawasaki">
+                    <img src="IMA/kawasaki-seeklogo-removebg-preview.png" alt="Logo Kawasaki">
+                    <span class="brand-name">Kawasaki</span>
+                </div>
+                <!-- Cópia exata para criar o loop infinito perfeito -->
+                <div class="brand-item" title="Peças Suzuki">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134620-removebg-preview.png" alt="Logo Suzuki">
+                    <span class="brand-name">Suzuki</span>
+                </div>
+                <div class="brand-item" title="Peças Honda">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134719-removebg-preview.png" alt="Logo Honda">
+                    <span class="brand-name">Honda</span>
+                </div>
+                <div class="brand-item" title="Peças Yamaha">
+                    <img src="IMA/Captura_de_tela_2026-07-23_134757-removebg-preview.png" alt="Logo Yamaha">
+                    <span class="brand-name">Yamaha</span>
+                </div>
+                <div class="brand-item" title="Peças Kawasaki">
+                    <img src="IMA/kawasaki-seeklogo-removebg-preview.png" alt="Logo Kawasaki">
+                    <span class="brand-name">Kawasaki</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding container" id="produtos">
+        <div class="section-header">
+            <span class="section-subtitle">Catálogo de Peças</span>
+            <h2 class="section-title">O que sua moto precisa está aqui</h2>
+        </div>
+
+        <div class="grid-products">
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Mais Vendido</span>
+                    <img src="IMA/kit_transmissao.png" alt="Kit Transmissão">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">KIT-TRANS-001</p>
+                    <h3 class="product-title">Kit Transmissão (Corrente + Coroa + Pinhão)</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Quero%20saber%20o%20preço%20do%20Kit%20Transmissão." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Design</span>
+                    <img src="IMA/retrovisor.png" alt="Retrovisores">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">RET-ESP-002</p>
+                    <h3 class="product-title">Espelho Retrovisor Esportivo</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Quero%20ver%20os%20retrovisores." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Visual Novo</span>
+                    <img src="IMA/carenagem.png" alt="Carenagens">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">CAR-KIT-003</p>
+                    <h3 class="product-title">Kit Carenagem Completo</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Gostaria%20de%20ver%20carenagens." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Proteção</span>
+                    <img src="IMA/capacete.png" alt="Capacetes">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">CAP-INT-004</p>
+                    <h3 class="product-title">Capacete Certificado Inmetro</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Quero%20ver%20os%20capacetes." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Aderência</span>
+                    <img src="IMA/pneu.png" alt="Pneus">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">PNE-MED-005</p>
+                    <h3 class="product-title">Pneus e Câmaras de Ar</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Qual%20o%20valor%20do%20pneu?" class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Esportivo</span>
+                    <img src="IMA/escapamento.png" alt="Escapamentos">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">ESC-PON-006</p>
+                    <h3 class="product-title">Escapamento e Ponteira Esportiva</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Gostaria%20de%20ver%20escapamentos." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Motor</span>
+                    <img src="IMA/motor.png" alt="Kit Cilindro KMP">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">KIT-CIL-007</p>
+                    <h3 class="product-title">Kit Cilindro Completo (Pistão + Anel + Camisa)</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Preciso%20de%20peças%20para%20o%20motor." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Lubrificação</span>
+                    <img src="IMA/oleo.png" alt="Óleo Mobil Super Moto">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">OLE-SIN-008</p>
+                    <h3 class="product-title">Óleos Lubrificantes (Mineral e Sintético)</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Gostaria%20de%20saber%20qual%20óleo%20vocês%20têm." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-tag">Iluminação</span>
+                    <img src="IMA/farol.png" alt="Painel de Instrumentos Digital">
+                </div>
+                <div class="product-content">
+                    <p class="product-code">FAR-LED-009</p>
+                    <h3 class="product-title">Faróis LED e Painéis de Instrumentos</h3>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Quero%20melhorar%20a%20iluminação%20da%20moto." class="btn-card-zap" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Consultar Preço
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER QUALIDADE / MECÂNICA -->
+    <div class="quality-banner" id="oficina">
+        <div class="quality-text">
+            <span class="quality-label">Qualidade Ney Motos</span>
+            <h2>Os melhores produtos para cuidar da sua moto</h2>
+            <p>
+                As Peças da <strong>Ney Motos</strong> são feitas para quem não abre mão da máxima confiança.
+                Desenvolvidas com desempenho superior e <strong>durabilidade extrema</strong>. Cada peça passa por rigorosos testes para assegurar segurança, performance e a experiência original em cada quilômetro.
+            </p>
+            <p>
+                Para quem busca <strong>economia com qualidade</strong>, trabalhamos com as melhores marcas do mercado. Peças homologadas, desenvolvidas para o uso diário e com excelente custo-benefício. Ideal para manter sua moto em dia, sem abrir mão da performance.
+            </p>
+            <a href="https://wa.me/5577998387125?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20pe%C3%A7as." class="btn-hero-primary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Pedir Orçamento
+            </a>
+        </div>
+        <div class="quality-image">
+            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=900&q=80" alt="Mecânico trabalhando">
+        </div>
+    </div>
+
+    <!-- BANNER FERRAMENTAS FULL-WIDTH -->
+    <div class="tools-banner">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1600&q=80" alt="Ferramentas de oficina">
+        <div class="tools-banner-overlay">
+            <div class="tools-banner-text">
+                <h3>Oficina Especializada em Motos</h3>
+                <p>Diagnóstico rápido, serviço de qualidade e atendimento direto pelo WhatsApp.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diferenciais - Faixa escura compacta -->
+    <section class="features-strip" id="oficina">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Por que escolher a Ney Motos?</span>
+                <h2 class="section-title">Qualidade e confiança em Buritirama</h2>
+            </div>
+            <div class="features-row">
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <div class="feat-text">
+                        <h4>Estoque Variado</h4>
+                        <p>Peças a pronta entrega para sua moto não ficar parada.</p>
+                    </div>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="feat-text">
+                        <h4>Oficina Completa</h4>
+                        <p>Mecânica preventiva e corretiva com agilidade.</p>
+                    </div>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-comments"></i></div>
+                    <div class="feat-text">
+                        <h4>Atendimento Direto</h4>
+                        <p>Tire dúvidas técnicas pelo WhatsApp na hora.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faixa de Contato Laranja -->
+    <section class="contact-strip" id="contato">
+        <div class="contact-inner">
+            <div class="contact-block">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="contact-block-text">
+                    <strong>Endereço</strong>
+                    <span>Rua Venâncio Pereira, 644 — Buritirama, BA</span>
+                </div>
+            </div>
+            <div class="contact-block">
+                <i class="fa-solid fa-clock"></i>
+                <div class="contact-block-text">
+                    <strong>Horário</strong>
+                    <span>Seg-Sex 07h–12h / 14h–17h &bull; Sáb 07h–12h</span>
+                </div>
+            </div>
+            <div class="contact-block">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div class="contact-block-text">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/5577998387125?text=Olá!%20Vim%20pelo%20site." target="_blank">(77) 99838-7125</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="IMA/WhatsApp_Image_2026-07-23_at_12.54.54-removebg-preview.png" alt="Ney Motos">
+                <span>Ney Motos</span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Ney Motos. Peças, Acessórios e Oficina — Buritirama, BA.</p>
+            <div class="footer-socials">
+                <a href="https://wa.me/5577998387125" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5577998387125?text=Olá!%20Vim%20pelo%20site%20da%20Ney%20Motos." class="float-zap" target="_blank" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script de Efeito 3D (Tilt) -->
+    <script>
+        document.querySelectorAll('.tilt-element').forEach(el => {
+            el.addEventListener('mousemove', e => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Rotação sutil e elegante
+                const rotateX = ((y - centerY) / centerY) * -8; 
+                const rotateY = ((x - centerX) / centerX) * 8;
+                
+                el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                el.style.zIndex = 10;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                el.style.zIndex = 1;
+            });
+        });
+    </script>
+</body>
+</html>
